@@ -187,13 +187,13 @@ section ul a {
     justify-content: space-between;
     color: inherit;
     text-decoration: none;
-    padding: 0.5em 3em;
+    padding: 1em 3em;
     position: relative;
 }
 
 section ul a .heading-container {
     overflow: hidden;
-    height: 80px;
+    height: 5vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
