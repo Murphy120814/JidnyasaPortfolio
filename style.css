@@ -1,0 +1,220 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Sofadi One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #A60844;
+    color: white;
+}
+
+.cursor {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: #EDBFFF;
+    z-index: 50;
+    transition: background-image ease 0.5s;
+    background-position: center;
+    background-size: cover;
+    mix-blend-mode: difference;
+}
+
+#loading-screen {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.main-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: inherit;
+    color: inherit;
+
+}
+
+.loading-text {
+    white-space: nowrap;
+    font-size: 2.5vw;
+}
+
+#nav-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: inherit;
+    padding: 1vw 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: inherit;
+}
+
+#nav-container #logo {
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+#nav-container #nav-items {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    gap: 2vw;
+    font-size: 1.2vw;
+}
+
+#nav-container #nav-items li {
+    cursor: pointer;
+}
+
+#page1 {
+    width: 100%;
+    height: 200vh;
+    position: relative;
+    color: inherit;
+    background-color: inherit;
+}
+
+#page1 #headlines {
+    position: absolute;
+    top: 12%;
+    left: 12%;
+
+}
+
+#page1 #headlines h1 {
+    font-size: 15vw;
+    font-weight: bold;
+    z-index: 10;
+    position: relative;
+    color: inherit;
+}
+
+#page1 #headlines h1:last-child {
+    margin-left: 15vw;
+    margin-top: -4vh;
+}
+
+
+#page1 #jcImage {
+    position: absolute;
+    transform: rotateZ(25deg);
+    top: 20%;
+    right: 10%;
+    width: 20vw;
+    height: 60vh;
+    border-radius: 30px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#page1 #jcImage img {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+#aboutMeSection {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    z-index: inherit;
+    top: 60%;
+    right: 10%;
+}
+
+#aboutMeSection h2 {
+    font-size: 5.5vw;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#aboutMeSection p {
+    font-size: 1.5vw;
+}
+
+.page2 {
+
+    position: relative;
+    margin-top: -10vh;
+    padding: 1vw 4vw;
+    border: 2px solid red;
+
+}
+
+
+section {
+    flex: 1;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+section ul a {
+    display: flex;
+    justify-content: space-between;
+    color: inherit;
+    text-decoration: none;
+    padding: 1.8em 3em;
+    overflow: hidden;
+    position: relative;
+}
+
+section ul a .heading-container {
+    overflow: hidden;
+    height: 80px;
+    display: grid;
+    place-content: center;
+    /* border: 2px solid red; */
+}
+
+section ul a p.primary,
+section ul a p.secondary {
+    font-size: 3vw;
+    width: 100%;
+    /* border: 2px solid red; */
+    margin-top: 30%;
+
+}
+
+section ul a p.primary {
+    transform: translateY(150%);
+}
+
+section ul a p.date {
+    transform: translateY(100%);
+}
+
+section ul a .line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 3%;
+    border-bottom: 1px solid black;
+    transform: scaleX(0);
+    transform-origin: left;
+}

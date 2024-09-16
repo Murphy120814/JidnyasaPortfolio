@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jidnyasa Chilka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="cursor"></div>
+
+    <div id="loading-screen">
+        <h2 class="loading-text">Heyy, Let's Make Your Brand's Story Resonate!</h2>
+    </div>
+
+    <div class="main-container">
+        <div id="nav-container">
+            <h2 id="logo">JC.</h2>
+            <ul id="nav-items">
+                <li>Home</li>
+                <li>About</li>
+                <li>Work</li>
+                <li>Contact Me</li>
+            </ul>
+        </div>
+
+        <div id="page1">
+            <div id="headlines">
+                <h1 id="firstName">Jidnyasa</h1>
+                <h1 id="secondName">Chilka.</h1>
+            </div>
+            <div id="jcImage">
+                <img src="./placeholderImage.jpg" alt="">
+            </div>
+
+            <div id="aboutMeSection">
+
+                <h2 class="headline">Content Strategist.</h2>
+                <p>Weaving AI magic into captivating content. I transform tech jargon into irresistible stories, turning
+                    clicks into conversions. From social media sorcery to cross-team collaboration, I craft digital
+                    experiences that make IT products shine and marketing goals soar. Ready to electrify your brand's
+                    narrative?</p>
+            </div>
+
+        </div>
+        <div id="page1" class="page2">
+            <!-- <section>
+                <ul>
+                    <li>
+                        <a>
+                            <div class="heading-container">
+                                <p class="primary">2019 Yo-Yo Contest Website</span>
+                                <p class="secondary">2019 Yo-Yo Contest Website</span>
+                            </div>
+
+                            <p class="date">UI/UX 2019</p>
+                            <div class="line"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div class="heading-container">
+                                <p class="primary">SamAsh Guitars</span>
+                                <p class="secondary">SamAsh Guitars</span>
+                            </div>
+
+                            <p class="date">IDENTITY - UI/UX 2020</p>
+                            <div class="line"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div class="heading-container">
+                                <p class="primary">EastWest SoundLine</span>
+                                <p class="secondary">EastWest SoundLine</span>
+                            </div>
+
+                            <p class="date">UI/UX - FRONTEND 2021</p>
+                            <div class="line"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div class="heading-container">
+                                <p class="primary">NextPollution</span>
+                                <p class="secondary">NextPollution</span>
+                            </div>
+
+                            <p class="date">UI/UX 2022</p>
+                            <div class="line"></div>
+                        </a>
+                    </li>
+                </ul>
+            </section> -->
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        const lenis = new Lenis()
+
+        lenis.on('scroll', (e) => {
+            console.log(e)
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+
+        var crsr = document.querySelector(".cursor");
+
+
+        document.addEventListener("mousemove", function (dets) {
+            crsr.style.left = dets.x + 20 + "px";
+            crsr.style.top = dets.y + 20 + "px";
+        });
+        const tl = gsap.timeline();
+
+        // Set the initial state to hide the content and disable scrolling
+        document.body.style.overflow = 'hidden';
+
+        tl.set(["#logo", "#nav-items li", ".main-container"], {
+            opacity: 0,
+        });
+
+        tl.from(".loading-text", {
+            opacity: 0,
+            y: 100,
+            duration: 2,
+            ease: "power3.out",
+        });
+
+        tl.to(".loading-text", {
+            opacity: 0,
+            duration: 1,
+        });
+
+        tl.to("#loading-screen", {
+            opacity: 0,
+            duration: 1,
+            zIndex: -1,
+
+        });
+
+        // Reveal the main container and nav elements
+        tl.to(["#nav-container", ".main-container"], {
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+        });
+
+        tl.from("#logo", {
+            opacity: 1,
+            x: -30,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=1");
+
+        tl.from("#nav-items li", {
+            opacity: 1,
+            x: -30,
+            stagger: 0.1,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.5");
+
+        tl.from("#headlines h1", {
+            opacity: 0,
+            y: 100,
+            duration: 1,
+            ease: "power3.out",
+            stagger: "0.1"
+        }, "-=1.3");
+        tl.from("#jcImage", {
+            opacity: 0,
+            x: 40,
+            rotateZ: "40deg",
+            duration: 1.2,
+
+        }, "-=.7")
+
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#page1 h1",
+                scroller: "body",
+                start: "top 27%",
+                end: "top 0",
+                markers: true,
+                scrub: 2,
+            }
+        })
+
+        tl2.to("#firstName", {
+            x: -500,
+        }, "<")
+
+        tl2.to("#secondName", {
+            x: 600,
+        }, "<")
+
+
+        const tl3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#page1 h1",
+                scroller: "body",
+                start: "top 27%",
+                bottom: "top -100%",
+                marker: true,
+                scrub: 2,
+            }
+        })
+
+        tl3.to("#jcImage", {
+            xPercent: "-280",
+            yPercent: "120",
+            rotateZ: "0deg",
+
+        })
+        tl3.to("body", {
+            backgroundColor: "#EAB082",
+            color: "black"
+        }, "")
+
+
+        const links = gsap.utils.toArray('li a')
+
+        //const links2 = document.querySelectorAll('li a')
+        //console.log(links, links2)
+
+        links.forEach(link => {
+
+            let linkTl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: .6 } })
+
+            const headingStart = link.querySelector('.primary')
+            const headingEnd = link.querySelector('.secondary')
+            const date = link.querySelector('.date')
+            const lineDash = link.querySelector('.line')
+
+            linkTl
+                .to(headingStart, {
+                    yPercent: -100
+                })
+                .to(headingEnd, {
+                    yPercent: -50
+                }, "<")
+                .to(lineDash, {
+                    scaleX: 1
+                }, "<")
+                //.to(link, {
+                //    backgroundColor: '#1C1C1C',
+                //    duration: .1
+                //}, "<")
+                .to(date, {
+                    y: 0
+                }, "<")
+
+            linkTl.pause()
+
+            link.addEventListener('mouseenter', () => {
+                linkTl.play()
+            })
+            link.addEventListener('mouseleave', () => {
+                linkTl.reverse()
+            })
+        })
+    </script>
+</body>
+
+</html>
