@@ -227,7 +227,7 @@ section ul a:hover p.secondary {
 }
 
 section ul a p.date {
-    transform: translateY(130%);
+    transform: translateY(150%);
     transition: transform 0.3s ease;
 }
 
