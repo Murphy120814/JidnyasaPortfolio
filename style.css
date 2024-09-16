@@ -154,17 +154,20 @@ body {
 }
 
 .page2 {
-
     position: relative;
     margin-top: -10vh;
     padding: 1vw 4vw;
-    border: 2px solid red;
-
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    color: inherit;
+    background-color: inherit;
 }
 
-
-section {
-    flex: 1;
+.page2 h1 {
+    font-size: 3vw;
+    font-weight: bold;
+    margin-bottom: 1vw;
 }
 
 section ul {
@@ -174,39 +177,62 @@ section ul {
     width: 100%;
 }
 
+section ul li {
+    overflow: hidden;
+    /* border: 2px solid red; */
+}
+
 section ul a {
     display: flex;
     justify-content: space-between;
     color: inherit;
     text-decoration: none;
-    padding: 1.8em 3em;
-    overflow: hidden;
+    padding: 0.5em 3em;
     position: relative;
 }
 
 section ul a .heading-container {
     overflow: hidden;
     height: 80px;
-    display: grid;
-    place-content: center;
-    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 section ul a p.primary,
 section ul a p.secondary {
-    font-size: 3vw;
+    font-size: 2vw;
     width: 100%;
-    /* border: 2px solid red; */
-    margin-top: 30%;
-
+    transition: transform 0.3s ease;
 }
 
+
+
+
 section ul a p.primary {
-    transform: translateY(150%);
+    transform: translateY(0);
+}
+
+section ul a p.secondary {
+    transform: translateY(100%);
+    color: white;
+}
+
+section ul a:hover p.primary {
+    transform: translateY(-100%);
+}
+
+section ul a:hover p.secondary {
+    transform: translateY(-100%);
 }
 
 section ul a p.date {
-    transform: translateY(100%);
+    transform: translateY(130%);
+    transition: transform 0.3s ease;
+}
+
+section ul a:hover p.date {
+    transform: translateY(0);
 }
 
 section ul a .line {
@@ -214,7 +240,51 @@ section ul a .line {
     top: 50%;
     left: 0;
     width: 3%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid currentColor;
     transform: scaleX(0);
     transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+section ul a:hover .line {
+    transform: scaleX(1);
+}
+
+#spanCue {
+    color: black;
+}
+
+
+#featuredWork {
+    width: 100%;
+    /* border: 2px solid red; */
+    min-height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 40px; */
+
+}
+
+#featuredWork a {
+    max-width: none;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+    width: 30%;
+}
+
+.work-box {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+.work-box h2 {
+    font-size: 5vw;
+    white-space: nowrap;
+    transform: translateX(65%);
+
+
 }
